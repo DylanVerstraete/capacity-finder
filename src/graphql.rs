@@ -1,6 +1,7 @@
 use anyhow::Result;
 use reqwest::blocking::Client;
 
+#[derive(Clone)]
 pub struct GraphqlClient {
     pub url: &'static str,
     pub client: Client,

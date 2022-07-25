@@ -6,9 +6,12 @@ fn main() -> Result<(), anyhow::Error> {
 
     let client = graphql::GraphqlClient::new("https://graphql.grid.tf/graphql")?;
 
-    let nodes = client.get_nodes_by_country(country)?;
+    let nodes_by_country = client.clone().get_nodes_by_country(country)?;
+    println!("nodes by country: {:?}", nodes_by_country);
 
-    println!("nodes: {:?}", nodes);
+    let city = String::from("Lochristi");
+    let nodes_by_city = client.get_nodes_by_city(city)?;
+    println!("nodes by city: {:?}", nodes_by_city);
 
     Ok(())
 }

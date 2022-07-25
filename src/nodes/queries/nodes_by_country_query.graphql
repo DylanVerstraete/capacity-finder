@@ -1,4 +1,4 @@
-query NodesQuery($country: String!) {
+query NodesByCountryQuery($country: String!) {
   nodes(where: { country_eq: $country }) {
     nodeID
   }

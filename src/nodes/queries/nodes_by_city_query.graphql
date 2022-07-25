@@ -1,0 +1,5 @@
+query NodesByCityQuery($city: String!) {
+  nodes(where: { city_eq: $city }) {
+    nodeID
+  }
+}
