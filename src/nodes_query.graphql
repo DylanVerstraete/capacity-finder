@@ -1,0 +1,5 @@
+query NodesQuery($country: String!) {
+  nodes(where: { country_eq: $country }) {
+    nodeID
+  }
+}

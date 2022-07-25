@@ -1,0 +1,13 @@
+[package]
+name = "capacity-finder"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+geoutils = "0.5.0"
+reqwest = { version = "^0.11", features = ["json", "blocking"] }
+graphql_client = { version = "0.11.0", features = ["reqwest-blocking"] }
+anyhow = "1.0.58"
+serde = "1.0.140"
