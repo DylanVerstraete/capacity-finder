@@ -12,8 +12,6 @@ struct NodesQuery;
 
 impl GraphqlClient {
     pub fn get_nodes_by_country(self, country: String) -> Result<Vec<i64>, anyhow::Error> {
-        // let country = String::from("Belgium");
-
         let variables = nodes_query::Variables {
             country: country.to_string(),
         };
@@ -26,7 +24,7 @@ impl GraphqlClient {
         let ids: Vec<i64> = response_data
             .nodes
             .into_iter()
-            .map(|node| node.node_id as i64)
+            .map(|node| node.node_id)
             .collect();
 
         Ok(ids)
